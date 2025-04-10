@@ -58,4 +58,26 @@ public:
             sum+= mtrx[i][i];  
             sum += mtrx[i][N - 1 - i]; 
         }
+        return sum; 
     }
+
+    void swaprows(int rowa, int rowb) {
+        if(rowa >= 0 && rowa < N && rowb >= 0 && rowb < N) {
+            swap(mtrx[rowa], mtrx[rowb]); //swaps rows in matrix
+        }
+    }
+
+    void swapcols(int col1, int col2) {
+        if(col1 >= 0 && col1 < N && col2 >= 0 && col2 < N) {
+            for (int i = 0; i < N; ++i) {
+                swap(mtrx[i][col1], mtrx[i][col2]);
+            }
+        }
+    }
+         
+    void chngevalue(int row, int col, T value) {
+        if row >= 0 && row < N && col >= 0 && col < N) {
+            mtrx[row][col] = value;
+        }
+    }
+};
